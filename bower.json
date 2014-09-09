@@ -1,0 +1,13 @@
+{
+  "name": "th-youtube",
+  "version": "0.0.0",
+  "keywords": "seed, polymer, web-components",
+  "main": "th-youtube.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.3.4",
+    "platform": "Polymer/platform#0.3.4",
+    "th-animated": "https://github.com/thelmanews/th-animated.git",
+    "th-theme": "https://github.com/thelmanews/th-theme.git",
+    "web-animations-js": "https://github.com/web-animations/web-animations-js.git"
+  }
+}
