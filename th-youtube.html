@@ -119,9 +119,13 @@
         
       },
       reset: function(){
-        var self = this;
+        var self = this,
+            iframeSelector = self.$.container.querySelector('iframe');
+        
+        if (iframeSelector){
+          iframeSelector.remove();
+        }
         self.iframe = false;
-        self.$.container.querySelector('iframe').remove();
       }
     });
   </script>
