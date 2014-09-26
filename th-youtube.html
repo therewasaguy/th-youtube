@@ -115,13 +115,14 @@
       },
       animate: function(){
         var self = this;
-        self.iframe = true;
+        self.iframe = self.shadowRoot.querySelector('#player') ? false : true;
+        
       },
       reset: function(){
         var self = this;
-        self.$.container.querySelector('iframe').remove();
         self.iframe = false;
-
+        self.$.player.remove();
+        self.$.container.querySelector('iframe').remove();
       }
     });
   </script>
