@@ -2,16 +2,10 @@
 <link rel="import" href="../th-animated/th-animated.html">
 <link rel="import" href="../google-apis/google-apis.html">
 
-<polymer-element name="th-youtube" attributes="videoid width height">
+<polymer-element name="th-youtube" extends="th-animated" attributes="videoid width height">
   <template>
       <core-style ref="theme"></core-style>
-      <style>
-        #player {
-          width: {{width}};
-          height:{{height}}
-        }
-      </style>
-      <div id="container">
+      <div id="container" style="width: {{width | widthFilter}}; height: {{height | widthFilter}};">
         <google-youtube-api on-api-load="{{apiLoad}}"></google-youtube-api>
       
         <div id="player"></div>
@@ -24,8 +18,8 @@
   <script>
     Polymer('th-youtube', {
       videoid: 'bLBSoC_2IY8',
-      height: '400px',
-      width: '280px',
+      height: '400',
+      width: '280',
       play: function() {
         var self = this;
         if (self.player) {
