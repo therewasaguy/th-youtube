@@ -18,8 +18,6 @@
   <script>
     Polymer('th-youtube', {
       videoid: 'bLBSoC_2IY8',
-      height: '400',
-      width: '280',
       play: function() {
         var self = this;
         if (self.player) {
@@ -99,8 +97,8 @@
         
         self.player = new YT.Player(self.$.player, {
           videoId: self.videoid,
-          width: self.width,
-          height: self.height,
+          width: self.computeWidth(),
+          height: self.computeHeight(),
           playerVars: playerVars,
           events: eventProxyFunctions
         });
