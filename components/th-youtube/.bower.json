@@ -1,0 +1,21 @@
+{
+  "name": "th-youtube",
+  "keywords": "seed, polymer, web-components",
+  "main": "th-youtube.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.1",
+    "th-animated": "https://github.com/thelmanews/th-animated.git",
+    "google-apis": "GoogleWebComponents/google-apis#~0.4.2"
+  },
+  "homepage": "https://github.com/therewasaguy/th-youtube",
+  "_release": "82d6bf403e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "82d6bf403e1ad25e08891ee304ffd35d94bccf04"
+  },
+  "_source": "git://github.com/therewasaguy/th-youtube.git",
+  "_target": "master",
+  "_originalSource": "therewasaguy/th-youtube",
+  "_direct": true
+}
