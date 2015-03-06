@@ -2,6 +2,19 @@
 <link rel="import" href="../th-animated/th-animated.html">
 <link rel="import" href="../google-apis/google-apis.html">
 
+<!--
+A Thelma component for YouTube playback.
+
+##### Example
+
+    <th-youtube></th-youtube>
+
+@element th-youtube
+@blurb Element for YouTube playback.
+@status alpha
+@homepage http://thelmanews.github.io/th-youtube
+-->
+
 <polymer-element name="th-youtube" extends="th-animated" attributes="videoid">
   <template>
       <core-style ref="theme"></core-style>
@@ -17,25 +30,53 @@
 
   <script>
     Polymer('th-youtube', {
+
+      /**
+       *  Video ID, i.e. "bLBSoC_2IY8" from a url like this:
+       *  https://www.youtube.com/watch?v=bLBSoC_2IY8
+       *  
+       *  @property videoId
+       *  @type String
+       */
       videoid: 'bLBSoC_2IY8',
+
+      /**
+       *  Play the video from the beginning.
+       *  
+       *  @method play
+       */
       play: function() {
         var self = this;
         if (self.player) {
           self.player.playVideo();
         }
       },
+
+      /**
+       *  Pause video
+       *  
+       *  @method pause
+       */
       pause: function() {
         var self = this;
         if (self.player) {
           self.player.pauseVideo();
         }
       },
+
+      /**
+       *  Seek playhead to a specific time (in seconds).
+       *  
+       *  @method seekTo
+       *  @param  Number seconds
+       */
       seekTo: function(seconds) {
         var self = this;
         if (self.player) {
           self.player.seekTo(seconds, true);
         }
       },
+
       videoidChanged: function() {
         console.log("VIDEO ID CHANGED");
         var self = this;
@@ -49,6 +90,12 @@
         }
         console.log("***");
       },
+
+      /**
+       *  Reset the playhead to beginning.
+       *  
+       *  @method reset
+       */
       reset: function() {
         var self = this;
         if (self.player) {
@@ -56,6 +103,8 @@
         }
       },
       player: null,
+
+
       apiLoad: function(){
         var self = this;
         var eventProxyFunctions = {};
@@ -105,11 +154,12 @@
         
         self.iframeSrc = self.player.d.src;
       },
+
       animate: function(){
         var self = this;
         self.iframe = self.shadowRoot.querySelector('#player') ? false : true;
-        
       },
+
       reset: function(){
         var self = this,
             iframeSelector = self.$.container.querySelector('iframe');
